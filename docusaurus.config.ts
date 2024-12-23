@@ -5,7 +5,7 @@ import type * as Preset from "@docusaurus/preset-classic";
 const config: Config = {
   title: "Kvexium",
   tagline: 'dec start: str = "now";',
-  favicon: "img/kvexium_file-new.svg",
+  favicon: "img/kvexium-newest.svg",
 
   // Set the production url of your site here
   url: "https://github.com",
@@ -72,13 +72,13 @@ const config: Config = {
     // Replace with your project's social card
     image: "img/docusaurus-social-card.jpg",
     navbar: {
-      title: "Kvexium",
+      title: "Kvexium Docs",
       logo: {
         alt: "Kvexium Logo",
-        src: "img/kvexium-new.svg",
+        src: "img/kvexium-newest.svg",
       },
       items: [
-        {
+        /* {
           to: "/docs/install",
           position: "left",
           label: "Install",
@@ -92,7 +92,7 @@ const config: Config = {
           to: "/docs/libs/search",
           position: "left",
           label: "Libraries",
-        },
+        }, */
         {
           type: "localeDropdown",
           position: "right",
@@ -100,7 +100,6 @@ const config: Config = {
         {
           href: "https://github.com/kvexium",
           className: "header-github-link",
-          "aria-label": "GitHub",
           position: "right",
         },
       ],

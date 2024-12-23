@@ -9,28 +9,30 @@ const Homepage: React.FC = () => {
         <section className="section-navbar">
           <nav className="navbar">
             <ul className="navbar-links">
-              <div className="navbar-logo"><svg version="1.0" xmlns="http://www.w3.org/2000/svg"
-               className="navbar-logo-image"
-               preserveAspectRatio="xMidYMid meet">
-              <g transform="translate(0.000000,900.000000) scale(0.100000,-0.100000)"
-              fill="#FFF" stroke="none">
-              <path d="M3755 5346 l-25 -25 0 -825 c0 -522 4 -834 10 -851 17 -46 65 -57
-              219 -53 103 4 150 10 194 25 162 57 283 208 303 376 10 81 -1 87 -145 87 -78
-              0 -121 4 -129 12 -9 9 -12 111 -12 398 0 443 -2 434 84 459 35 10 50 20 57 40
-              6 14 9 91 7 173 -3 146 -3 148 -31 175 l-27 28 -240 3 -240 3 -25 -25z"/>
-              <path d="M4855 5360 c-96 -24 -200 -96 -263 -182 -54 -73 -72 -129 -72 -220
-              l0 -77 34 -6 c18 -4 132 -5 252 -3 248 4 265 8 348 91 75 75 89 115 94 253 5
-              163 16 154 -196 153 -92 -1 -180 -5 -197 -9z"/>
-              <path d="M4381 4671 c-27 -27 -34 -76 -28 -189 7 -136 6 -135 83 -127 70 8
-              145 -5 209 -35 88 -42 175 -151 175 -220 l0 -30 -78 0 c-47 0 -83 -5 -90 -12
-              -8 -8 -12 -60 -12 -170 0 -151 1 -160 24 -197 31 -49 69 -78 115 -90 28 -7
-              293 -8 433 -2 10 1 24 14 33 31 12 24 15 74 15 277 -1 308 -12 366 -97 495
-              -87 132 -236 238 -385 273 -42 10 -116 15 -220 15 -143 0 -160 -2 -177 -19z"/>
-              </g>
-              </svg></div>
+              <div className="navbar-logo">
+
+              <svg xmlns="http://www.w3.org/2000/svg" 
+     viewBox="350 350 200 200"
+     className="navbar-logo-image" 
+     preserveAspectRatio="xMidYMid meet">
+  <defs>
+    <linearGradient id="gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#f6d68d" />
+      <stop offset="100%" stop-color="#46b3a5" />
+    </linearGradient>
+  </defs>
+  <g transform="translate(0,900) scale(0.1,-0.1)" fill="url(#gradient)" stroke="none">
+    <path d="M3755 5346 l-25 -25 0 -825 c0 -522 4 -834 10 -851 17 -46 65 -57 219 -53 103 4 150 10 194 25 162 57 283 208 303 376 10 81 -1 87 -145 87 -78 0 -121 4 -129 12 -9 9 -12 111 -12 398 0 443 -2 434 84 459 35 10 50 20 57 40 6 14 9 91 7 173 -3 146 -3 148 -31 175 l-27 28 -240 3 -240 3 -25 -25z"/>
+    <path d="M4855 5360 c-96 -24 -200 -96 -263 -182 -54 -73 -72 -129 -72 -220 l0 -77 34 -6 c18 -4 132 -5 252 -3 248 4 265 8 348 91 75 75 89 115 94 253 5 163 16 154 -196 153 -92 -1 -180 -5 -197 -9z"/>
+    <path d="M4381 4671 c-27 -27 -34 -76 -28 -189 7 -136 6 -135 83 -127 70 8 145 -5 209 -35 88 -42 175 -151 175 -220 l0 -30 -78 0 c-47 0 -83 -5 -90 -12 -8 -8 -12 -60 -12 -170 0 -151 1 -160 24 -197 31 -49 69 -78 115 -90 28 -7 293 -8 433 -2 10 1 24 14 33 31 12 24 15 74 15 277 -1 308 -12 366 -97 495 -87 132 -236 238 -385 273 -42 10 -116 15 -220 15 -143 0 -160 -2 -177 -19z"/>
+  </g>
+</svg>
+
+
+            </div>
               <li><a href="/docs/install">Install<kdb>I</kdb></a></li>
-              <li><a href="#">Libraries</a></li>
-              <li><a href="#">Docs</a></li>
+              <li><a href="/docs/category/libraries">Libraries</a></li>
+              <li><a href="/docs/introduction">Docs</a></li>
             </ul>
             <div className="navbar-buttons">
               <button className="navbar-button-secondary"><div className="button-content"><i className="fa-brands fa-github github-icon" />Github<kdb>G</kdb></div></button>

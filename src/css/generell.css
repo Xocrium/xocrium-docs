@@ -30,4 +30,5 @@ span.special {
 ::selection {
     background: #245774; /* Farbverlauf für die Hintergrundfarbe der Auswahl */
     color: white !important; /* Textfarbe der Auswahl */
+    -webkit-text-fill-color: white;
 }
