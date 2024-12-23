@@ -1,0 +1,86 @@
+/* Home.css */
+
+body {
+  font-family: 'Arial', sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #bbdfed;
+  color: #333;
+}
+
+.home-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.hero-section {
+  background-color: #77c0b9;
+  width: 100%;
+  padding: 80px 20px;
+  text-align: center;
+  color: white;
+}
+
+.hero-title {
+  font-size: 3rem;
+  margin-bottom: 20px;
+}
+
+.hero-description {
+  font-size: 1.2rem;
+  margin-top: 0;
+}
+
+.features-section {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  padding: 40px 20px;
+  background-color: #6088b1;
+  width: 100%;
+}
+
+.feature-card {
+  background-color: white;
+  padding: 20px;
+  width: 250px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+.feature-card h2 {
+  color: #50479a;
+  font-size: 1.5rem;
+}
+
+.feature-card p {
+  font-size: 1rem;
+  color: #333;
+}
+
+.cta-section {
+  background-color: #50479a;
+  padding: 60px 20px;
+  text-align: center;
+  color: white;
+}
+
+.cta-section h2 {
+  font-size: 2rem;
+}
+
+.cta-button {
+  background-color: #77c0b9;
+  color: white;
+  font-size: 1rem;
+  padding: 15px 30px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.cta-button:hover {
+  background-color: #6088b1;
+}

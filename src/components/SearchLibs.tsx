@@ -18,7 +18,7 @@ const SearchLibs = () => {
 
     const fetchLibraries = async () => {
         try {
-            const response = await fetch('https://raw.githubusercontent.com/kvexium/kvexium.github.io/main/src/kvex.libs.json');
+            const response = await fetch('https://raw.githubusercontent.com/kvexium/kvexium.github.io/refs/heads/main/src/kvex.libs.json');
             if (!response.ok) {
                 throw new Error(`HTTP error! status: ${response.status}`);
             }
@@ -49,12 +49,12 @@ const SearchLibs = () => {
                 {filteredLibraries.map(lib => (
                     <div key={lib.name} style={{ border: '1px solid #ccc', borderRadius: '8px', padding: '15px', display: 'flex', alignItems: 'center', backgroundColor: 'rgba(0, 0, 0, 0.3)' }}>
                         <img
-                            src={`https://raw.githubusercontent.com/${lib.name}/main/${lib.logo}`}
+                            src={`https://raw.githubusercontent.com/${lib.name}/refs/heads/main/${lib.logo}`}
                             alt={`logo couldn't load`}
                             style={{ width: '50px', marginRight: '15px', marginLeft: '10px' }}
                         />
                         <div style={{ flexGrow: 1 }}>
-                            <Link to={`/docs/libs?lib=${lib.name}`}>
+                      <Link to={`/docs/libs?a=${lib.name.split('/')[0]}&l=${lib.name.split('/')[1]}`}>
                                 <h2 className={'libs link'}>{lib.title}</h2>
                             </Link>
                             <p className={'libs author'}>{lib.name.split('/')[0]}</p>

@@ -28,12 +28,10 @@ const config: Config = {
   // may want to replace "en" with "zh-Hans".
   i18n: {
     defaultLocale: "en",
-    locales: ["en", "de", "fr", "it"],
+    locales: ["en", "de"],
     localeConfigs: {
       en: { label: "English" },
       de: { label: "Deutsch" },
-      fr: { label: "Français" },
-      it: { label: "Italiano" },
     },
   },
 
@@ -45,8 +43,8 @@ const config: Config = {
           sidebarPath: "./sidebars.ts",
           // Please change this to your repo.
           // Remove this to remove the "edit this page" links.
-          editUrl:
-            "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/",
+          /* editUrl:
+            "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/", */
         },
         blog: {
           showReadingTime: true,
@@ -56,15 +54,15 @@ const config: Config = {
           },
           // Please change this to your repo.
           // Remove this to remove the "edit this page" links.
-          editUrl:
-            "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/",
+          /* editUrl:
+            "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/", */
           // Useful options to enforce blogging best practices
           onInlineTags: "warn",
           onInlineAuthors: "warn",
           onUntruncatedBlogPosts: "warn",
         },
         theme: {
-          customCss: "./src/css/custom.css",
+          customCss: [ /* "./src/pages/index.css", */ "./src/css/generell.css"],
         },
       } satisfies Preset.Options,
     ],

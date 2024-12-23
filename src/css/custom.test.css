@@ -1,0 +1,164 @@
+/* Font and icon imports */
+@import url("https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@100..800&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Lora:wght@400;700&display=swap");
+@import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css");
+
+/* Custom root colors to match Zed's theme */
+:root {
+    --background-light: #f7f7f8;
+    --background-dark: #1b1f24;
+    --accent-blue: #005BBB;
+    --accent-blue-dark: #63C5DA;
+    --text-color-light: #3c4858;
+    --text-color-dark: #d1d5db;
+    --border-light: rgba(40, 58, 90, 0.1);
+    --border-dark: rgba(255, 255, 255, 0.15);
+    --border-radius: 10px;
+    --font-primary: "Lora", serif;
+    --font-code: "JetBrains Mono", monospace;
+}
+
+/* Base styling for light mode */
+[data-theme="light"] {
+    --background-color: var(--background-light);
+    --accent-color: var(--accent-blue);
+    --text-color: var(--text-color-light);
+    --border-color: var(--border-light);
+}
+
+/* Base styling for dark mode */
+[data-theme="dark"] {
+    --background-color: var(--background-dark);
+    --accent-color: var(--accent-blue-dark);
+    --text-color: var(--text-color-dark);
+    --border-color: var(--border-dark);
+}
+
+body {
+    background-color: var(--background-color);
+    color: var(--text-color);
+    font-family: var(--font-primary);
+    transition: background-color 0.3s ease, color 0.3s ease;
+    height: 100%;
+}
+
+/* Header and navbar styling */
+.navbar {
+    background: var(--background-color);
+    box-shadow: 0 2px 5px var(--border-color);
+    border-bottom: 1px dashed var(--border-color);
+}
+
+.navbar__title,
+.navbar__link {
+    color: var(--text-color);
+    font-weight: bold;
+    font-size: 1rem;
+}
+
+h1.hero__title {
+    font-family: var(--font-primary);
+    font-weight: 700;
+    font-size: 3.5rem;
+    color: var(--accent-color);
+    background: linear-gradient(90deg, var(--accent-color) 0%, #fff 50%, var(--accent-color) 100%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+    padding-bottom: 0.5rem;
+}
+
+.hero__subtitle {
+    color: var(--text-color);
+    font-size: 1.25rem;
+}
+
+/* Button styling */
+.button {
+    background-color: var(--accent-color);
+    color: #fff;
+    padding: 0.5em 1.5em;
+    border-radius: var(--border-radius);
+    font-family: var(--font-primary);
+    transition: background-color 0.3s;
+}
+
+.button:hover {
+    background-color: darken(var(--accent-color), 10%);
+}
+
+/* Container styling for sections */
+.container {
+    background: rgba(255, 255, 255, 0.8);
+    backdrop-filter: blur(8px);
+    border: 1px dashed var(--border-color);
+    border-radius: var(--border-radius);
+    padding: 2rem;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+[data-theme="dark"] .container {
+    background: rgba(0, 0, 0, 0.5);
+}
+
+/* Footer styling */
+.footer {
+    background-color: rgba(255, 255, 255, 0.1);
+    border-top: 1px dashed var(--border-color);
+    padding: 1.5rem;
+    text-align: center;
+    color: var(--text-color);
+}
+
+/* Grid layout for features */
+.features {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 1rem;
+    padding: 2rem;
+}
+
+.features__item {
+    background: var(--background-color);
+    border: 1px dashed var(--border-color);
+    padding: 1rem;
+    border-radius: var(--border-radius);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.features__item h3 {
+    color: var(--accent-color);
+}
+
+/* Light/dark mode cursor styles */
+[data-theme="light"] body {
+    cursor: url("../../static/cursor/light/pointer.png"), default;
+}
+[data-theme="dark"] body {
+    cursor: url("../../static/cursor/dark/pointer.png"), default;
+}
+
+/* Code block styling */
+code {
+    background-color: rgba(0, 0, 0, 0.05);
+    font-family: var(--font-code);
+    padding: 0.2em 0.4em;
+    border-radius: var(--border-radius);
+}
+
+[data-theme="dark"] code {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .hero__title {
+        font-size: 2.5rem;
+    }
+    .hero__subtitle {
+        font-size: 1rem;
+    }
+    .features {
+        grid-template-columns: 1fr;
+    }
+}

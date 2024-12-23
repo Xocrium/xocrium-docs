@@ -1,0 +1,364 @@
+@import url('https://fonts.googleapis.com/css2?family=Host+Grotesk:ital,wght@0,300..800;1,300..800&display=swap');
+
+:root {
+  --color-button-primary: #084dcf;
+  --color-button-primary-hover: #084dcfdc;
+  --color-button-shadow-primary: #053894;
+  --color-button-secondary: #ffffff0e;
+  --color-button-secondary-hover: #ffffff1c;
+  --color-button-shadow-secondary: #ddd2;
+  --color-button-shadow-secondary-opac: #ddd1;
+  --current-highlight: rgb(245, 144, 66);
+  --grainy-noise-background: url("../../static/img/noiseTexture.png");
+
+  --ifm-breadcrumb-color-active: #f6d68d;
+  --ifm-menu-color-active: #f6d68d;
+  --ifm-color-primary: #f6d68d;
+  --ifm-pagination-nav-color-hover: #46b3a5;
+  --ifm-link-color: #46b3a5;
+}
+
+body {
+  margin: 0;
+  height: 100%;
+  position: relative;
+  overflow: hidden;
+  background-blend-mode: overlay;
+  background-color: #18191d;
+  background-image: var(--grainy-noise-background);
+  color: #fff;
+  font-family: Arial,sans-serif;
+}
+
+.section-header::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image:
+    repeating-linear-gradient(
+      to bottom,
+      rgba(255, 255, 255, 0.1) 0,
+      rgba(255, 255, 255, 0.1) 1px,
+      transparent 1px,
+      transparent 20px
+    ), /* Horizontale Linien */
+    repeating-linear-gradient(
+      to right,
+      rgba(255, 255, 255, 0.1) 0,
+      rgba(255, 255, 255, 0.1) 1px,
+      transparent 1px,
+      transparent 20px
+    ); /* Vertikale Linien */
+  background-size: 20px 20px; /* Grid-Abstand */
+  mask-image:
+    linear-gradient(to bottom, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 0) 100%); /* Transparenz von oben nach unten */
+  -webkit-mask-image:
+    linear-gradient(to bottom, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 0) 100%); /* Für Webkit-basierte Browser */
+  z-index: -1; /* Pseudoelement hinter den Inhalt legen */
+}
+
+.section {
+  position: relative;
+  background-color: #1b2232;
+  padding: 50px;
+  overflow: visible; /* Ermöglicht das Überstehen der Trapeze */
+  height: 300px; /* Beispielhöhe */
+}
+
+.container {
+  background: none;
+}
+
+.trapezoid {
+  background-color: #0b0e0f;
+  border: 1px solid var(--ifm-color-primary-dark);
+  bottom: -3.4px;
+  height: 8.5px;
+  position: absolute;
+  transform-origin: bottom;
+  width: 8.5px;
+  z-index: 999;
+}
+
+.trapezoid.trapez-left {
+  left: -1.8px; /* Position links */
+  transform: rotate(-45deg); /* Nach links kippen */
+}
+
+.trapezoid.trapez-right {
+  right: -1.8px; /* Position rechts */
+  transform: rotate(45deg); /* Nach rechts kippen */
+}
+
+kdb {
+  background-color: #ffffff0f;
+  border: 1.75px solid #fff4;
+  border-radius: 2.5px;
+  color: #fff;
+  font-size: 95%;
+  font-weight: 600;
+  justify-items: center;
+  margin-left: 10px;
+  padding: 1.5px 7px;
+  height: 100%;
+  align-content: center;
+  justify-content: center;
+}
+
+button {
+  z-index: 500;
+}
+
+.navbar--dark,
+:root {
+  --ifm-navbar-link-hover-color: var(--ifm-color-primary);
+}
+
+.navbar-sidebar {
+  overflow-x: hidden;
+}
+
+.navbar__logo img, body, html {
+  height: 100%;
+}
+
+.navbar__link:after {
+  content: "";
+  border-color: currentcolor #0000;
+  border-style: solid;
+  border-width: .4em .4em 0;
+  margin-left: .3em;
+  position: relative;
+  top: 2px;
+  transform: translateY(-50%);
+}
+
+.div-navbar, .navbar {
+  background-color: #1a1d22;
+}
+
+.div-navbar {
+  border-bottom: 1px dashed #444;
+  box-shadow: 0 4px 6px #0003;
+  position: sticky;
+  z-index: 9999;
+}
+
+.navbar {
+  align-items: center;
+  display: flex;
+  font-size: .75rem;
+  justify-content: space-between;
+  padding: 0 5rem;
+  border: none;
+  box-shadow: none;
+}
+
+ul.navbar-links {
+  display: flex;
+  gap: .45rem;
+  margin-left: 150px;
+  margin-top: 7px;
+  margin-bottom: 7px;
+  list-style: none;
+  justify-content: center;
+  align-items: center;
+}
+
+ul.navbar-links li {
+  font-family: Host Grotesk,sans-serif;
+  font-size: 120%;
+  letter-spacing: 1.2px;
+  align-items: center;
+}
+
+ul.navbar-links li a {
+  border-radius: 4px;
+  color: #fff;
+  padding: 7px 10px;
+  align-items: center;
+}
+
+.navbar-links li a:hover {
+  background-color: #fff1;
+  color: #fff;
+  text-decoration: none;
+}
+
+div.navbar-logo {
+    height: 100%;
+}
+
+svg.navbar-logo-image {
+    height: 35px;
+    margin-right: 5px;
+    width: 35px;
+}
+
+button.navbar-button-secondary {
+    background-color: var(--color-button-secondary);
+      border: 1px solid var(--color-button-shadow-secondary);
+      border-radius: 4px;
+      box-shadow: inset 0 -3.5px var(--color-button-shadow-secondary);
+}
+
+.navbar__inner {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.navbar__brand {
+  align-items: center;
+  display: flex;
+  margin-right: 1rem;
+}
+
+.navbar__brand:hover {
+  color: var(--ifm-navbar-link-hover-color);
+  text-decoration: none;
+}
+
+.navbar__logo {
+  flex: 0 0 auto;
+  height: 2rem;
+  margin-right: .5rem;
+}
+
+.navbar__link::after {
+  display: none;
+}
+
+section.section-header {
+    background-image: linear-gradient(180deg,#0000,#b9b9b905);
+}
+
+.section-header::after {
+  background-image: 
+    repeating-linear-gradient(180deg,#ffffff12 0,#ffffff12 1px,#0000 0,#0000 20px),
+    repeating-linear-gradient(90deg,#ffffff12 0,#ffffff12 1px,#0000 0,#0000 20px);
+  background-size: 20px 20px;
+  bottom: 0;
+  content: "";
+  left: 0;
+  mask-image: linear-gradient(180deg,#000 0,#0000);
+  -webkit-mask-image: linear-gradient(0deg,#000 0,#0000);
+  overflow: hidden;
+  position: absolute;
+  right: 0;
+  top: 0;
+  z-index: 10;
+}
+
+section {
+  border-left: 1px dashed #444;
+  border-right: 1px dashed #444;
+  margin: 0 3rem;
+  overflow: visible !important;
+  position: relative;
+}
+
+.section-release {
+  background: linear-gradient(90deg,#1a1d22,#1b2232,#1a1d22);
+  border-bottom: 1px dashed #444;
+}
+
+.release-button {
+  background: none;
+  border: none;
+  color: #fff;
+  font-size: 105%;
+  font-weight: 500;
+  height: 100%;
+  letter-spacing: 1.2px;
+  margin-bottom: 8px;
+  margin-top: 12px;
+  width: 100%;
+}
+
+.button-icon, .release-icon {
+  margin-right: 10px;
+}
+
+h1.header-title {
+  font-size: 3rem;
+  margin-bottom: 1.25rem;
+  padding-top: 8rem;
+  text-align: center;
+}
+
+p.header-subtitle {
+  font-size: 1.2rem;
+  margin-bottom: 0;
+  padding-bottom: 14rem;
+  text-align: center;
+}
+
+.shadow {
+  box-shadow: 0 4px 6px #0003;
+}
+
+.navbar-buttons, .main-buttons {
+  display: flex;
+  gap: 10px;
+}
+
+.navbar-buttons {
+  margin-right: 150px;
+}
+
+.main-buttons {
+  margin-top: 40px;
+  justify-content: center;
+}
+
+.navbar-button-primary {
+  background-color: var(--color-button-primary);
+  border: 1px solid var(--color-button-shadow-primary);
+  border-radius: 4px;
+  box-shadow: inset 0 -3.5px var(--color-button-shadow-primary);
+  padding: .45rem .5rem;
+}
+
+.navbar-button-secondary {
+  background-color: var(--color-button-secondary);
+  border: 1px solid var(--color-button-shadow-secondary);
+  border-radius: 4px;
+  box-shadow: inset 0 -3.5px var(--color-button-shadow-secondary);
+  padding: .45rem .5rem;
+}
+
+.button-content {
+  margin-bottom: 2.5px;
+  letter-spacing: 1px;
+}
+
+.github-icon {
+  margin-right: 7px;
+}
+
+.menu.thin-scrollbar {
+  padding: 0.5rem;
+  background-color: #23252b;
+}
+
+a.menu__link--active, a.menu__link {
+  background-color: none;
+}
+
+.menu__link--active:not(.menu__link--sublist) {
+  background-color: none !important;
+  color: --ifm-menu-color;
+}
+
+.menu__list-item-collapsible > a.menu__link--active.menu__link--sublist {
+  color: var(--active-tab);
+}
+
+.clean-btn.menu__caret {
+  background-color: none;
+}

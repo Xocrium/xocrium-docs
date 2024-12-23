@@ -19,6 +19,8 @@
     --ifm-color-primary-lightest: #3cad6e;
     --ifm-code-font-size: 95%;
     --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.1);
+    --active-tab: rgb(245, 144, 66);
+    --tab-hover: rgb(201, 161, 129);
 }
 
 /* For readability concerns, you should choose a lighter palette in dark mode. */
@@ -40,27 +42,6 @@ b.navbar__title {
     font-family: "Oxanium", sans-serif;
 }
 
-/* Cursors */
-[data-theme="light"] body {
-    cursor: url("../../static/cursor/light/pointer.png"), default;
-}
-
-[data-theme="light"] a,
-[data-theme="light"] link,
-[data-theme="light"] button {
-    cursor: url("../../static/cursor/light/link.png"), pointer;
-}
-
-[data-theme="dark"] body {
-    cursor: url("../../static/cursor/dark/pointer.png"), default;
-}
-
-[data-theme="dark"] a,
-[data-theme="dark"] button,
-[data-theme="dark"] link {
-    cursor: url("../../static/cursor/dark/link.png"), pointer;
-}
-
 svg.iconExternalLink_node_modules-\@docusaurus-theme-classic-lib-theme-Icon-ExternalLink-styles-module {
     display: none;
 }
@@ -70,22 +51,15 @@ span.token.plain,
 span.token.comment {
     border: none;
     font-family: "JetBrains Mono", monospace;
-    font-size: 95%;
-    padding-bottom: 1.6px;
+    font-size: 90%;
+    padding-bottom: 1.6x;
 }
 
 code {
     padding-left: 4px;
     padding-right: 4px;
+    margin-bottom: 3px;
 }
-
-/* Body oder Container, der das Hintergrundbild enthält */
-/* body {
-    margin: 0;
-    padding: 0;
-    background: none;
-    overflow: visible;
-} */
 
 body::after {
     content: "";
@@ -93,7 +67,7 @@ body::after {
     top: 0;
     left: 0;
     width: 100vw;
-    height: 100vh;
+    height: 100%;
     background: url("https://img.freepik.com/premium-vector/abstract-geometric-shapes-fluid-gradient-elements-background_1142-9937.jpg")
         center/cover no-repeat;
     background-size:
@@ -111,7 +85,7 @@ body::after {
     top: 0;
     left: 0;
     width: 100vw;
-    height: 100vh;
+    height: 100%;
     background: url("https://img.freepik.com/premium-vector/abstract-geometric-shapes-fluid-gradient-elements-background_1142-9937.jpg")
         center/cover no-repeat;
     background-size:
@@ -124,9 +98,9 @@ body::after {
 
 /* Container mit leichtem Glassmorphism-Effekt für Light Mode */
 div.container {
-    background: rgba(255, 255, 255, 0.42); /* Hellerer Hintergrund */
-    backdrop-filter: blur(15px);
-    box-shadow: 0 4px 30px rgba(255, 255, 255, 0.1);
+    /* background: rgba(255, 255, 255, 0.42); /* Hellerer Hintergrund */
+    /* backdrop-filter: blur(15px); */
+    /* box-shadow: 0 4px 30px rgba(255, 255, 255, 0.1); */
     border: none;
     border-radius: 10px;
     padding: 20px;
@@ -140,7 +114,7 @@ div.container {
 }
 
 .footer {
-    background: rgba(255, 255, 255, 0.1);
+    background: none;
     border-top-left-radius: 20px;
     border-top-right-radius: 20px;
     box-shadow: -4px 0 30px rgba(255, 255, 255, 0.2);
@@ -153,8 +127,9 @@ div.container {
     border-bottom-right-radius: 10px;
 }
 
-div.container.padding-top--md.padding-bottom--lg {
-    border: none;
+/* div.container.padding-top--md.padding-bottom--lg {
+    background-color: transparent !important;
+    border: none !important;
     border-radius: 10px;
     margin-top: 10px;
     margin-bottom: 25px;
@@ -178,7 +153,7 @@ section.features_src-components-HomepageFeatures-styles-module div.container {
     max-width: var(--ifm-container-width-xl);
     width: calc(100% - 20px);
     color: white;
-}
+} */
 
 header.hero {
     background-color: transparent;
@@ -307,14 +282,15 @@ nav.menu {
         border-bottom-right-radius: 10px;
     }
 
-    div.container.padding-top--md.padding-bottom--lg {
+    /* div.container.padding-top--md.padding-bottom--lg {
         border: none;
         border-radius: 10px;
         margin-top: 10px;
         margin-bottom: 25px;
         max-width: var(--ifm-container-width-xl); /* Maximale Breite */
-        width: calc(100% - 20px);
-    }
+        /* width: calc(100% - 20px);
+        background-color: none;
+    } */
 
     ul.table-of-contents.table-of-contents__left-border {
         border-left: 2px solid rgba(255, 255, 255, 0.2);
@@ -416,6 +392,7 @@ nav.menu {
         background: rgba(0, 0, 0, 0.5);
         box-shadow: 4px 0 30px rgba(0, 0, 0, 0.7);
         margin-right: 20px;
+        padding-right: 0.5rem;
     }
 
     div.navbar-sidebar {
@@ -429,6 +406,14 @@ nav.menu {
 
     a.menu__link.header-github-link {
         margin-top: 20px;
+    }
+
+    a.menu__link:hover {
+        color: var(--active-tab)
+    }
+
+    a.menu__link--active:not(.menu__link--sublist) {
+        color: var(--tab-hover);
     }
 
     .header-github-link:before {

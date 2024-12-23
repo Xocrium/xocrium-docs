@@ -1,8 +1,8 @@
 {
-  "label": "Basics",
+  "label": "Kess",
   "position": 3,
   "link": {
     "type": "generated-index",
-    "description": "The simple Stuff..."
+    "description": "The Standard Library"
   }
 }

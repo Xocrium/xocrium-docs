@@ -1,0 +1,33 @@
+/* Cursors */
+[data-theme="light"] body {
+    cursor: url("../../static/cursor/dark/pointer.png"), default;
+}
+
+[data-theme="light"] a,
+[data-theme="light"] link,
+[data-theme="light"] button {
+    cursor: url("../../static/cursor/dark/link.png"), pointer;
+}
+
+[data-theme="dark"] body {
+    cursor: url("../../static/cursor/light/pointer.png"), default;
+}
+
+[data-theme="dark"] a,
+[data-theme="dark"] button,
+[data-theme="dark"] link {
+    cursor: url("../../static/cursor/light/link.png"), pointer;
+}
+
+/* Special Stuff */
+span.special {
+    background: linear-gradient(90deg, #f6d68d, #46b3a5);
+    font-weight: bolder;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+::selection {
+    background: #245774; /* Farbverlauf für die Hintergrundfarbe der Auswahl */
+    color: white !important; /* Textfarbe der Auswahl */
+}

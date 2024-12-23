@@ -1,0 +1,21 @@
+# Loops
+
+Kvexium provides several types of loops to manage repetitive tasks and iterations through data structures. The following are the available loop structures:
+
+### For-Loop
+  The for loop in Kvexium is used to iterate over a specific range or sequence.
+
+  ```kvexium
+  for (variable: type := start_value; condition, increment) {
+    // Loop body
+  }
+  ```
+
+  Example:
+  ```kvexium
+  for (i: i8 := 0; i <= 8, i++) {
+    emitln("i (&{i}) is smaller or equal to 8\n")
+  }
+  ```
+
+In this example, `i` starts from `0` and increments by `1` on each iteration, until it reaches `8`. If the condition `i <= 8` is satisfied, the loop body is executed.
